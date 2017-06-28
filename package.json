@@ -1,0 +1,24 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "needed modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spartan172321/FriendFinder.git"
+  },
+  "author": "cheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spartan172321/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/spartan172321/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "path": "^0.12.7"
+  }
+}
