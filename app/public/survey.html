@@ -213,7 +213,7 @@
         </div>
         <div class="modal-body">
           <h2 id="matchName"></h2>
-          <img id="matchImg" src="http://i.dailymail.co.uk/i/pix/2017/01/16/20/332EE38400000578-4125738-image-a-132_1484600112489.jpg" alt="">
+          <img id="matchImg" src="" alt="image">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -226,6 +226,7 @@
 <script type="text/javascript">
 var userData
 var scoreNums = [];
+var info;
 // Capture the form inputs 
 $("#submit").on("click", function(){
 //===========================================================  
@@ -243,13 +244,12 @@ $("#submit").on("click", function(){
 
     return isValid;
   }
-  console.log(validateForm());
 //===========================================================  
 
   // If all required fields are filled
   if (validateForm() === true){
     // Create an object for the user's data
-    var scoreArr = [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()];
+    var scoreArr = [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
 
     scoreNums = [];
 
@@ -270,8 +270,9 @@ $("#submit").on("click", function(){
 
     // AJAX post the data to the friends API. 
     $.post(currentURL + "/api/friends", userData, function(data){
-
       // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+      info = data;
+      console.log(data)
       $("#matchName").text(data.name);
       $('#matchImg').attr("src", data.photo);
 
