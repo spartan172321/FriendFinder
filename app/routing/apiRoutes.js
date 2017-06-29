@@ -17,8 +17,8 @@ module.exports = function(app){
 	// below code handles when the user submits the survey and the data goes to the server. The data is in the form of a JSON object and pushed into an array
 
 	app.post("/api/friends", function(req, res){
+		console.log(req.body)
 		friendData.push(req.body);
 		res.json(true);
 	});
-
 }
